@@ -7,7 +7,7 @@ let hepsi=[]
 let Hesaplananlar=[]
 let İslemler=[]
 
-function buton(e){
+function buton(e){//sitedeki tuşlarla yazabilmek için
   if(e=="+" || e=="-"|| e=="*"|| e=="/"||e==".")
   {
     if(isaret(e)!=false){
@@ -24,11 +24,9 @@ function buton(e){
   else if(e="C"){
     goster.value=""
   }
-  
-  
-
 }
-function isaret(e){
+
+function isaret(e){//isaretleri koyma ve kontrol etme
     hepsi=goster.value
     if(hepsi.length==0){
         if(e!="-"){
@@ -46,20 +44,16 @@ function isaret(e){
            }
         }
     }
-    
     return true
 }
 
-function run(e) {
-    
+function run(e) { // klavyeden de  yazabilmek için
     if(e.key=="+" || e.key=="-"|| e.key=="*"|| e.key=="/" || e.key=="."){
       if(isaret(e.key)==false) {
         e.preventDefault()
       }
     }
-
     else if(e.key=="1" || e.key=="2"|| e.key=="3"||  e.key=="4" || e.key=="Backspace" || e.key=="5" || e.key=="6"|| e.key=="7"|| e.key=="8" || e.key=="9"|| e.key=="0"){
-      
     }
     else if(e.key=="Enter"){ 
    enter();
@@ -67,9 +61,9 @@ function run(e) {
     else{
     e.preventDefault()
     }
-
 }
-function enter(){
+
+function enter(){ // hesaplama işlemi 
   let girdimi=false
   hepsi=goster.value
   let sayi=""
